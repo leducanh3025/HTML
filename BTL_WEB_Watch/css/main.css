@@ -1,0 +1,377 @@
+.navbar{
+    padding: 0px 10px;
+    z-index: 1000;
+   
+}
+
+.nav-item .nav-link a:active, a:focus {
+  outline: 0;
+  border: none;
+}
+.navbar .nav-item a:hover{
+  color: red    !important;
+  }
+  
+
+  .navbar-nav .nav-item{
+    text-align: center;
+  }
+  .navbar-brand img{
+    width: 13  0px;
+  }
+  .container-fluid{
+    width: 100%;
+padding-right: 15px;
+padding-left: 15px;
+margin-right: auto;
+margin-left: auto;
+background-color: white;
+  }
+
+.nav-item .nav-link  {
+    font-size: 16px;
+    position: relative;
+font-family: "Josefin Sans",sans-serif;
+color: #141517;
+font-weight: 400;
+padding: 41px 21px !important;
+text-transform: capitalize;
+transition: all .3s ease-out 0s;
+  }
+
+  .watch img{
+   z-index: -99999;
+    top: 0;
+    animation-duration: 2s;
+    animation-name: zooming;
+ animation-iteration-count: infinite;    
+  }
+  
+  
+
+  @keyframes zooming {
+    100%{
+      transform: scale(0.9);
+    }
+    
+ 50%{
+      transform: scale(0.8);
+    }
+    0% {
+      transform: scale(0.9);
+    }
+  }
+
+  .hed {
+    font-size: 96px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 26px;
+    font-family: "Josefin Sans",sans-serif;
+color: #0b1c39;
+    
+  }
+
+  .ricons i{
+    padding: 31px 20px;
+    size: 14px;
+  }
+  .ricons i:hover{
+    color: red;
+    transition: all .3s ease-out 0s;
+  }
+  .section1{
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #f0f0f2;
+
+  }
+  .p-text{
+    font-size: 17px;
+line-height: 1.6;
+font-weight: 400;
+margin-bottom: 39px;
+color: #212025;
+margin-bottom: 60px;
+padding-right: 50px;
+  }
+  .btn-primary{
+    padding: 25px 29px;
+    background: #4a4a4b;
+    border-radius: 0px;
+    border-color: #4a4a4b;
+    font-family: "Josefin Sans",sans-serif;
+text-transform: uppercase;
+font-size: 16px;
+font-weight: 600;
+letter-spacing: 0.03em;
+padding: 25px 28px;
+border-radius: 0px;
+
+line-height: 0;;
+  }
+
+  .card-body {
+    text-align: center;
+  }
+  .row h2{
+    color: #000;
+font-size: 48px;
+font-weight: 700;
+line-height: 1;
+font-family: "Josefin Sans",sans-serif;
+  }
+
+  .card-body .card-text a{
+    text-decoration:none;
+    color: #444444;
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+  .card-body .card-price{
+    color: #ff2020;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .sectionbanner{
+    padding-top: 80px;
+    height: 490px;
+    background-image: url(../imges/background.png);
+  }
+  .sectionbanner .row h2{
+    font-size: 70px;
+font-weight: 700;
+text-transform: capitalize;
+font-family: "Josefin Sans",sans-serif;
+  }
+
+  .nav .nav-link.active,.nav-link a{
+    background: none;
+border-bottom: 2px solid #ff5757;
+
+  }
+
+  .nav .nav-link {
+    padding-bottom: 10px;
+    display: block;
+    color: #1b1b1b;
+    text-transform: capitalize;
+    font-size: 16px;
+  }
+  .btnfilter{
+    border-radius:30px;
+    border: none;
+    background-color: #f2f2f2;
+  }
+  .btnfilter:hover{
+    text-decoration: none;
+  }
+  .dropbtn{
+    text-align: center;
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+    color: #1b1b1b;
+  }
+  .cimg{
+   width: 100%;
+  }
+
+  .img-cap{
+    background-color: red;
+    position: absolute;
+    width: 100%;
+    justify-content: center;
+  
+    bottom: 0px;
+    height: 10px;
+  }
+  .addcart{
+    display: none;
+  }
+  .single-items:hover .img-cap{
+    height: 60px;
+
+  }
+  .single-items:hover .img-cap .addcart{
+    display: block;
+    text-align: center;
+    color: white;
+    padding: 15px 0;
+    
+  }
+  .item-img img{
+    width: 100%;
+  }
+  
+  .item-caption a{
+    text-decoration:none;
+    color: #444444;
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+  .item-img{
+    text-align: center;
+    width: 100%;
+    position: relative;
+  }
+
+  .price{
+    color: #ff2020;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .item-img a:hover{
+    width: 150%;
+  }
+  .item-img .favicon{
+    display: flex;
+    position: absolute;
+    right: 0;
+    padding:15px ;
+    z-index: 9999;
+    
+  
+  }
+  .favicon i {
+    display: none;
+  }
+  .single-items:hover .favicon i{
+    display: block;
+    
+  }
+ 
+  .ship{
+    padding: 43px 20px 0 45px;
+    color: white;
+  }
+  .ship .sub{
+    font-size: 16px;
+color: #d3d1d1;
+font-family: "Roboto",sans-serif;
+  }
+
+  .ship h6{
+    color: #fff;
+font-size: 20px;
+font-weight: 700;
+line-height: 1.2;
+margin-bottom: 12px;
+font-family: "Roboto",sans-serif;
+  }
+
+
+  .foterlist {
+  padding: 0 0;
+  }
+  .foterlist li a {
+    text-decoration: none;
+    color: #868c98;
+    transition: all 1s;
+  }
+
+  .foterlist li a:hover {
+    color: red; 
+    padding-left: 20px;
+
+  }
+  .foterlist li{
+    color: #868c98;
+    margin-bottom: 15px;
+    list-style: none;
+   
+  }
+.col-3 h3{
+  color: #000;
+  font-size: 20px;
+  margin-bottom: 29px;
+  font-weight: 500;
+  text-transform: capitalize;
+  font-family: "Roboto",sans-serif;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+
+.sicons i{
+  color: #000;
+  padding: 0px 10px;
+  size: 12px;
+  transition: all 1s;
+}
+
+.sicons i:hover{
+ 
+  padding: 0px 10px;
+  size: 14px;
+  color: #ff2020;
+transform: rotateY(180deg);
+}
+
+.hertico i{
+  color: red;
+  transition: all 1s;
+}
+.hertico i:hover{
+  transform: scale(1.5);
+}
+.mvission{
+  font-size: 30px;
+font-family: "Josefin Sans",sans-serif;
+font-weight: 700;
+margin-bottom: 30px;
+color: #000a2d;
+display: inline-block;
+position: relative;
+padding-left: 68px;
+}
+.mvsub{
+  color: #464d65;
+font-size: 14px;
+line-height: 30px;
+margin-bottom: 15px;
+font-family: "Roboto",sans-serif;
+}
+
+.hot{
+  position: absolute;
+  background: #ff003c;
+color: #fff;
+text-align: center;
+border-radius: 8px;
+font-size: 12px;
+top: 15px;
+right: 5px;
+width: 30px;
+margin: 5px;
+
+}
+
+.overlap{
+  background-color: #00000051;
+  position: absolute;
+  height: 80%;
+  width: 100%;
+  opacity: 0  ;
+  transition: all .5s;
+}
+.card{
+  position: relative;
+  transition: all .5s;
+  overflow: hidden;
+}
+.card:hover .overlap{
+  opacity: 1;
+}
+
+.card:hover .card-img-top{
+  transform: scale(1.1);
+}
+.card .card-img-top{
+  transition: all .5s;
+}

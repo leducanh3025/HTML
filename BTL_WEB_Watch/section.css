@@ -1,0 +1,87 @@
+.item{
+    box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.20);
+    padding-top: 40px;
+    padding-bottom: 80px;
+    margin-bottom: 32px;
+margin-right: 80px; 
+padding :80px; 
+justify-content: center;
+align-items: center;
+align-content: center;
+
+
+}
+
+.item__Title{
+    font-weight: 300;
+    letter-spacing: 2px;
+    padding: 30px;
+    margin-bottom: 20px;
+  
+}
+
+.title{
+    margin-top: 20px;
+margin-bottom: 10px;
+font-weight: bold;
+letter-spacing: 2px;
+font-size: 16px;
+}
+.item h2 {
+    font-size: 52px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+
+.parent{
+    align-items: center;
+    align-content: center;
+    display: flex;
+    justify-content: center;
+
+}
+.pricing{
+    padding-top: 100px;
+padding-bottom: 100px;
+text-align: center;
+
+}
+
+.item ul li {
+    display: block;
+    font-weight: 500;
+    padding: 12px 0px;
+    text-align: center;
+    align-items: center;
+    padding-right: 30px;
+  }
+
+  .btns{
+    color: aliceblue;
+    
+    border: none;
+    border-radius: 0px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 16px 60px;
+    margin-top: 20px;
+    text-transform: uppercase;
+  }
+  .getit{
+    background-color: cyan;
+  }
+  .tak{
+    background-color: orange;
+  }
+
+  .bynow{
+    background-color: green;
+  }
+  ul {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
