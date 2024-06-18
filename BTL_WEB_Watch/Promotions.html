@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promotions</title>
+    <style>
+        /* Add custom styles for popup */
+        .popup {
+            display: none;
+            position: fixed;
+            z-index: 9;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background-color: #fefefe;
+            padding: 20px;
+            border-radius: 20px;
+            width: 400px;
+            height: 300px;
+            text-align: center;
+            position: relative;
+        }
+
+        .popup-content p {
+            margin-top: 50px;
+            font-size: 18px;
+        }
+
+        .popup-content .btn-group {
+            margin-top: 30px;
+        }
+
+        .popup-content .btn-group button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .popup-content .btn-group .btn-yes {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .popup-content .btn-group .btn-no {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .close {
+            color: #aaa;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+<nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="imges/logo.png.webp" alt="Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="shop.html">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="About.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <div class="hot">Hot</div>
+                        Latest
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="blog.html">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pages</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+            <div class="ricons">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-regular fa-user"></i>
+                <i class="fa-brands fa-opencart"></i>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="sectionbanner bg-img d-flex justify-content-center align-items-center" style="background-image: url('imges/background.png');">
+    <div class="row">
+        <h2>Promotions</h2>
+    </div>
+</div>
+
+<div class="product mt-5 py-5">
+    <div class="container">
+        <div class="row mx-5">
+            <div class="row justify-content-between py-5">
+                <div class="col-xl-5 col-lg-5 col-md-4 col-sm-6 d-flex justify-content-start">
+                    <nav class="nav">
+                        <a class="nav-link active" aria-current="page" href="#">Promotions</a>
+                    </nav>
+                </div>
+            </div>
+            <div class="row" id="product-list">
+                <!-- Sample Product Card -->
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mt-5">
+                    <div class="single-items mb-50 text-center">
+                        <div class="item-img">
+                            <div class="favicon">
+                                <i class="fa-regular fa-heart fa-2x"></i>
+                            </div>
+                            <img src="imges/watch1.webp" alt="Watch 1">
+                            <div class="img-cap">
+                                <div>
+                                    <p class="addcart" onclick="openPopup()">Add to cart</p>
+                                    <div id="cartPopup" class="popup">
+                                        <div class="popup-content">
+                                            <span class="close" onclick="closePopup()">&times;</span>
+                                            <p>Bạn có chắc muốn thêm sản phẩm này vào giỏ không?</p>
+                                            <div class="btn-group">
+                                                <button class="btn-yes" onclick="confirmAddToCart()">Có</button>
+                                                <button class="btn-no" onclick="closePopup()">Không</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-caption py-4">
+                            <h3><a href="product_details.html">Thermo Ball Etip Gloves</a></h3>
+                            <span class="price">$ 45,743</span>
+                            <p class="original-price"><del>2.000.000đ</del></p>
+                            <p class="discount">-25%</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Additional Product Cards -->
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mt-5">
+                    <div class="single-items mb-50 text-center">
+                        <div class="item-img">
+                            <div class="favicon">
+                                <i class="fa-regular fa-heart fa-2x"></i>
+                            </div>
+                            <img src="imges/watch2.webp" alt="Watch 2">
+                            <div class="img-cap">
+                                <div>
+                                    <p class="addcart" onclick="openPopup()">Add to cart</p>
+                                    <div id="cartPopup" class="popup">
+                                        <div class="popup-content">
+                                            <span class="close" onclick="closePopup()">&times;</span>
+                                            <p>Bạn có chắc muốn thêm sản phẩm này vào giỏ không?</p>
+                                            <div class="btn-group">
+                                                <button class="btn-yes" onclick="confirmAddToCart()">Có</button>
+                                                <button class="btn-no" onclick="closePopup()">Không</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-caption py-4">
+                            <h3><a href="product_details.html">Smart Watch Series 5</a></h3>
+                            <span class="price">$ 29,999</span>
+                            <p class="original-price"><del>2.000.000đ</del></p>
+                            <p class="discount">-25%</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mt-5">
+                    <div class="single-items mb-50 text-center">
+                        <div class="item-img">
+                            <div class="favicon">
+                                <i class="fa-regular fa-heart fa-2x"></i>
+                            </div>
+                            <img src="imges/watch3.webp" alt="Watch 3">
+                            <div class="img-cap">
+                                <div>
+                                    <p class="addcart" onclick="openPopup()">Add to cart</p>
+                                    <div id="cartPopup" class="popup">
+                                        <div class="popup-content">
+                                            <span class="close" onclick="closePopup()">&times;</span>
+                                            <p>Bạn có chắc muốn thêm sản phẩm này vào giỏ không?</p>
+                                            <div class="btn-group">
+                                                <button class="btn-yes" onclick="confirmAddToCart()">Có</button>
+                                                <button class="btn-no" onclick="closePopup()">Không</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-caption py-4">
+                            <h3><a href="product_details.html">Luxury Leather Watch</a></h3>
+                            <span class="price">$ 85,250</span>
+                            <p class="original-price"><del>2.000.000đ</del></p>
+                            <p class="discount">-25%</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mt-5">
+                    <div class="single-items mb-50 text-center">
+                        <div class="item-img">
+                            <div class="favicon">
+                                <i class="fa-regular fa-heart fa-2x"></i>
+                            </div>
+                            <img src="imges/OIP.jpg" alt="Watch 4">
+                            <div class="img-cap">
+                                <div>
+                                    <p class="addcart" onclick="openPopup()">Add to cart</p>
+                                    <div id="cartPopup" class="popup">
+                                        <div class="popup-content">
+                                            <span class="close" onclick="closePopup()">&times;</span>
+                                            <p>Bạn có chắc muốn thêm sản phẩm này vào giỏ không?</p>
+                                            <div class="btn-group">
+                                                <button class="btn-yes" onclick="confirmAddToCart()">Có</button>
+                                                <button class="btn-no" onclick="closePopup()">Không</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-caption py-4">
+                            <h3><a href="product_details.html">Classic Analog Watch</a></h3>
+                            <span class="price">$ 15,499</span>
+                            <p class="original-price"><del>2.000.000đ</del></p>
+                            <p class="discount">-25%</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mt-5">
+                    <div class="single-items mb-50 text-center">
+                        <div class="item-img">
+                            <div class="favicon">
+                                <i class="fa-regular fa-heart fa-2x"></i>
+                            </div>
+                            <img src="imges/watch5.webp" alt="Watch 5">
+                            <div class="img-cap">
+                                <div>
+                                    <p class="addcart" onclick="openPopup()">Add to cart</p>
+                                    <div id="cartPopup" class="popup">
+                                        <div class="popup-content">
+                                            <span class="close" onclick="closePopup()">&times;</span>
+                                            <p>Bạn có chắc muốn thêm sản phẩm này vào giỏ không?</p>
+                                            <div class="btn-group">
+                                                <button class="btn-yes" onclick="confirmAddToCart()">Có</button>
+                                                <button class="btn-no" onclick="closePopup()">Không</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-caption py-4">
+                            <h3><a href="product_details.html">Digital Sports Watch</a></h3>
+                            <span class="price">$ 9,799</span>
+                            <p class="original-price"><del>2.000.000đ</del></p>
+                            <p class="discount">-25%</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mt-5">
+                    <div class="single-items mb-50 text-center">
+                        <div class="item-img">
+                            <div class="favicon">
+                                <i class="fa-regular fa-heart fa-2x"></i>
+                            </div>
+                            <img src="imges/watch5.webp" alt="Watch 6">
+                            <div class="img-cap">
+                                <div>
+                                    <p class="addcart" onclick="openPopup()">Add to cart</p>
+                                    <div id="cartPopup" class="popup">
+                                        <div class="popup-content">
+                                            <span class="close" onclick="closePopup()">&times;</span>
+                                            <p>Bạn có chắc muốn thêm sản phẩm này vào giỏ không?</p>
+                                            <div class="btn-group">
+                                                <button class="btn-yes" onclick="confirmAddToCart()">Có</button>
+                                                <button class="btn-no" onclick="closePopup()">Không</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-caption py-4">
+                            <h3><a href="product_details.html">Digital Sports Watch</a></h3>
+                            <span class="price">$ 9,799</span>
+                            <p class="original-price"><del>2.000.000đ</del></p>
+                            <p class="discount">-25%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer" style="padding-top: 50px;">
+    <div class="container" style="width: 80%;">
+        <div class="row mb-5">
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 py-4">
+                <a href="#" class="footer-site-logo">
+                    <img src="imges/logo.png.webp" alt="">
+                </a>
+                <p class="mt-5">Thương hiệu đồng hồ Việt cho người Việt</p>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 py-4">
+                <h3>Thông tin</h3>
+                <ul class="foterlist">
+                    <li><a href="#">Về chúng tôi</a></li>
+                    <li><a href="#">Đặt mua</a></li> 
+                    <li><a href="#">Khuyến mãi</a></li>
+                    <li><a href="#">Voucher</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 py-4">
+                <h3>Sản phẩm</h3>
+                <ul class="foterlist">
+                    <li><a href="#">Đồng hồ nam</a></li>
+                    <li><a href="#">Đồng hồ nữ</a></li>
+                    <li><a href="#">Vỏng cổ</a></li>
+                    <li><a href="#">Phụ kiện</a></li>
+                </ul>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 py-4">
+                <h3>Chăm sóc khách hàng</h3>
+                <ul class="foterlist">
+                    <li><a href="#">Liên hệ bảo hành</a></li>
+                    <li><a href="#">Chính sách</a></li>
+                    <li><a href="#">Điểu khoản bảo mật</a></li>
+                    <li><a href="#">Báo cáo</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row mb-4 d-flex justify-content-between">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 hertico">
+                <p><small>Copyright ©2023 All rights reserved | Hiếu Lê và Đức Anh cùng những người bạn</small></p>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 justify-content-center">
+                <div class="sicons pt-1">
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-behance"></i></a>
+                    <a href="#"><i class="fa-solid fa-globe"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function openPopup() {
+        document.getElementById('cartPopup').style.display = 'flex';
+    }
+
+    function closePopup() {
+        document.getElementById('cartPopup').style.display = 'none';
+    }
+
+function confirmAddToCart() {
+    closePopup();
+    window.location.href = "cart.html"; // Chuyển hướng đến trang cart.html
+}
+</script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
