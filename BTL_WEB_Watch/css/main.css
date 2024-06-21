@@ -601,3 +601,31 @@ a:focus {
     font-size: 14px;
   }
 }
+.promotion-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative; /* Để thêm hiệu ứng trên phần tử con */
+  overflow: hidden; /* Ẩn bớt phần rìa của box-shadow khi không hover */
+  transition: box-shadow 0.3s ease; /* Hiệu ứng chuyển đổi box-shadow */
+}
+
+.promotion-item:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Hiển thị box-shadow khi hover */
+}
+
+.promotion-item a {
+  display: block; /* Đảm bảo liên kết chiếm hết không gian của hình ảnh */
+}
+
+.promotion-item img {
+  width: 100%; /* Đảm bảo hình ảnh điền hết không gian được cấp phát */
+  height: auto;
+  margin-bottom: 10px; /* Khoảng cách giữa hình ảnh và văn bản */
+}
+
+.promotion-item h4 {
+  position: relative; /* Đảm bảo văn bản có thể chồng lên box-shadow */
+  z-index: 1; /* Đảm bảo văn bản nằm trên box-shadow */
+}
