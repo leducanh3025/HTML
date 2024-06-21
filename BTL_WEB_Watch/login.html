@@ -17,7 +17,7 @@
 <body>
   <nav class="navbar sticky navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="index.html"> <img src="imges/logo.png.webp" alt=""></a>
+      <a class="navbar-brand" href="#"> <img src="imges/logo.png.webp" alt=""></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -43,19 +43,23 @@
             <a class="nav-link" href="blog.html">Blog</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="Page.html">pages</a>
+            <a class="nav-link" href="#">pages</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="contact.html">Contact</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="Complaint.html">Complaint</a>
+
           </li>
         </ul>
         <div class="ricons">
-          <a href="login.html"><i class="fa-regular fa-user"></i></a>
-       <a href="Cart.html"><i class="fa-brands fa-opencart"></i></a>   
+
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <a href="login.html">
+            <i class="fa-regular fa-user"></i>
+          </a>
+          <i class="fa-brands fa-opencart"></i>
         </div>
 
       </div>
@@ -63,29 +67,30 @@
   </nav>
 
   <section class="container forms">
-    <div class="form login">
-        <div class="form-content">
-            <header>Login</header>
-            <form action="#">
-                <div class="field input-field">
-                    <input type="email" placeholder="Email" class="input">
-                </div>
-                <div class="field input-field">
-                    <input type="password" placeholder="Password" class="password">
-                    <i class='bx bx-hide eye-icon'></i>
-                </div>
-                <div class="form-link">
-                    <a href="#" class="forgot-pass">Forgot password?</a>
-                </div>
-                <div class="field button-field">
-                    <button>Login</button>
-                </div>
-            </form>
-            <div class="form-link">
-                <span>Don't have an account? <a href="signup.html">Signup</a></span>
-            </div>
-        </div>
-    </div>
+    <section class="container forms">
+      <div class="form login">
+          <div class="form-content">
+              <header>Login</header>
+              <form action="#" id="loginForm">
+                  <div class="field input-field">
+                      <input type="email" placeholder="Email" class="input" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                  </div>
+                  <div class="field input-field">
+                      <input type="password" placeholder="Password" class="password" required>
+                      <i class='bx bx-hide eye-icon'></i>
+                  </div>
+                  <div class="form-link">
+                      <a href="#" class="forgot-pass">Forgot password?</a>
+                  </div>
+                  <div class="field button-field">
+                      <button type="submit">Login</button>
+                  </div>
+              </form>
+              <div class="form-link">
+                  <span>Don't have an account? <a href="signup.html">Signup</a></span>
+              </div>
+          </div>
+      </div>
   </section>
   <div id="signupPopup" class="popup">
     <div class="popup-content">
