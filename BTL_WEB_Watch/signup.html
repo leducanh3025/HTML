@@ -17,7 +17,7 @@
 <body>
   <nav class="navbar sticky navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="index.html"> <img src="imges/logo.png.webp" alt=""></a>
+      <a class="navbar-brand" href="#"> <img src="imges/logo.png.webp" alt=""></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -43,19 +43,23 @@
             <a class="nav-link" href="blog.html">Blog</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="Page.html">pages</a>
+            <a class="nav-link" href="#">pages</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="contact.html">Contact</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="Complaint.html">Complaint</a>
+
           </li>
         </ul>
         <div class="ricons">
-          <a href="login.html"><i class="fa-regular fa-user"></i></a>
-       <a href="Cart.html"><i class="fa-brands fa-opencart"></i></a>   
+
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <a href="login.html">
+            <i class="fa-regular fa-user"></i>
+          </a>
+          <i class="fa-brands fa-opencart"></i>
         </div>
 
       </div>
@@ -64,48 +68,48 @@
 
   <section class="container forms" style="margin-top: 1cm;">
     <div class="form login">
-        <div class="form-content">
-            <header>Signup</header>
-            <form action="#">
-                <div class="field input-field">
-                    <input type="text" placeholder="Name" class="input">
-                </div>
-                <div class="field input-field">
-                    <input type="email" placeholder="Email" class="input">
-                </div>
-                <div class="field input-field">
-                    <input type="tel" placeholder="Phone Number" class="input">
-                </div>
-                <div class="field input-field">
-                    <input type="text" placeholder="Address" class="input">
-                </div>
-                <div class="field input-field">
-                    <input type="password" placeholder="Password" class="password">
-                    <i class='bx bx-hide eye-icon'></i>
-                </div>
-                <div class="field input-field">
-                    <input type="password" placeholder="Confirm Password" class="password">
-                    <i class='bx bx-hide eye-icon'></i>
-                </div>
-                <div class="field button-field">
-                    <button>Register</button>
-                </div>
-            </form>
-            <div class="form-link">
-                <span>Already have an account? <a href="login.html">Login</a></span>
-            </div>
+      <div class="form-content">
+        <header>Signup</header>
+        <form action="#" id="signupForm">
+          <div class="field input-field">
+            <input type="text" placeholder="Name" class="input" required>
+          </div>
+          <div class="field input-field">
+            <input type="email" placeholder="Email" class="input" required
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+          </div>
+          <div class="field input-field">
+            <input type="tel" placeholder="Phone Number" class="input" required pattern="[0-9]{10}">
+          </div>
+          <div class="field input-field">
+            <input type="text" placeholder="Address" class="input" required>
+          </div>
+          <div class="field input-field">
+            <input type="password" placeholder="Password" class="password" required>
+            <i class='bx bx-hide eye-icon'></i>
+          </div>
+          <div class="field input-field">
+            <input type="password" placeholder="Confirm Password" class="password" required>
+          </div>
+          <div class="field button-field">
+            <button type="submit">Register</button>
+          </div>
+        </form>
+        <div class="form-link">
+          <span>Already have an account? <a href="login.html">Login</a></span>
         </div>
+      </div>
     </div>
     <div id="signupPopup" class="popup">
-        <div class="popup-content">
-            <span class="close" onclick="closeSignupPopup()">&times;</span>
-            <p>Đăng kí thành công!</p>
-            <div class="btn-group">
-                <button class="btn-yes" onclick="confirmSignup()">OK</button>
-            </div>
+      <div class="popup-content">
+        <span class="close" onclick="closeSignupPopup()">&times;</span>
+        <p>Đăng kí thành công!</p>
+        <div class="btn-group">
+          <button class="btn-yes" onclick="confirmSignup()">OK</button>
         </div>
+      </div>
     </div>
-</section>
+  </section>
   <script src="js/login.js"></script>
 
 </body>
