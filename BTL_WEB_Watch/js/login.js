@@ -33,12 +33,46 @@ function closeSignupPopup() {
 function confirmSignup() {
   // Logic for confirming signup goes here
   closeSignupPopup();
+
+  if (window.location.pathname.includes('signup')) {
+    window.location.href = 'login.html'; 
+  } else if (window.location.pathname.includes('login')) {
+    window.location.href = 'index.html';
+  }
 }
 
 window.onload = function() {
   var registerButton = document.querySelector('.button-field button');
+  var form = document.querySelector('form');
+  
+  var isSignupForm = form.id === 'signupForm'; 
+
+  var passwordInput, confirmPasswordInput;
+
+  if (isSignupForm) {
+    passwordInput = form.querySelector('input[type="password"]');
+    confirmPasswordInput = form.querySelectorAll('input[type="password"]')[1];
+  }
+
   registerButton.addEventListener('click', function(event) {
-      event.preventDefault();
-      document.getElementById('signupPopup').style.display = 'flex';
+    event.preventDefault();
+    
+    if (isSignupForm) {
+      if (passwordInput.value !== confirmPasswordInput.value) {
+        alert('Passwords do not match. Please try again.');
+        return; 
+      }
+    }
+    
+    if (form.checkValidity()) {
+      if (isSignupForm) {
+        document.getElementById('signupPopup').style.display = 'flex';
+      } else {
+        document.getElementById('signupPopup').style.display = 'flex';
+      }
+    } else {
+      alert('Please fill valid information in all required fields.');
+      form.reportValidity();
+    }
   });
 }
