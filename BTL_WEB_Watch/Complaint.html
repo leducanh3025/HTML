@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://fonts.googleapis.com/css?family=Josefin Sans' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint</title>
+</head>
+<body>
+  <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><img src="imges/logo.png.webp" alt="Logo"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="shop.html">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="About.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="latest.html"><span class="hot">Hot</span> Latest</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="blog.html">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Page.html">Pages</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="Complaint.html">Complaint</a>
+          </li>
+        </ul>
+        <div class="ricons">
+          <a href="login.html"><i class="fa-regular fa-user"></i></a>
+          <a href="Cart.html"><i class="fab fa-opencart"></i></a> 
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+<div class="sectionbanner bg-img src=imges/background.png d-flex justify-content-center align-items-center">
+    <div class="row">
+        <h2>Complaint</h2>
+    </div>
+</div>
+<div class="product mt-5 py-5">
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-md-12">
+        <h3>Submit a Complaint</h3>
+        <form action="#" method="post">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+          </div>
+          <div class="mb-3">
+            <label for="order_number" class="form-label">Order Number</label>
+            <input type="text" class="form-control" id="order_number" name="order_number" required>
+          </div>
+          <div class="mb-3">
+            <label for="complaint" class="form-label">Complaint Details</label>
+            <textarea class="form-control" id="complaint" name="complaint" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit Complaint</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="submission-msg mt-3 alert alert-success d-none" role="alert">
+  Khiếu nại của bạn đã được gửi thành công.
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form');
+    const submissionMsg = document.querySelector('.submission-msg');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // Ngăn chặn form gửi đi mặc định
+
+      // Đây là nơi bạn sẽ thực hiện xử lý gửi form, ví dụ AJAX để gửi dữ liệu lên máy chủ.
+      // Tạm thời, chúng ta sẽ chỉ hiển thị thông báo thành công.
+
+      submissionMsg.classList.remove('d-none'); // Hiển thị thông báo
+      form.reset(); // Đặt lại form sau khi gửi thành công (tùy chọn)
+    });
+  });
+</script>
+<style>.submission-msg {
+  margin-top: 10px;
+  padding: 8px 15px; /* Điều chỉnh khoảng cách bên trong */
+  border: 1px solid #4caf50;
+  background-color: #dff0d8;
+  color: #4caf50;
+  font-size: 14px; /* Điều chỉnh kích thước font */
+  border-radius: 5px; /* Điều chỉnh góc bo tròn */
+}
+</style>
+
+<footer class="footer" style="padding-top: 50px;">
+     
+  <div class="container " style="width: 80%;">
+    <div class="row mb-5">
+      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 py-4">
+        <a href="#" class="footer-site-logo">
+          <img src="imges/logo.png.webp" alt="">
+        </a>
+        <p class="mt-5">Thương hiệu đồng hồ Việt cho người Việt </p>
+      </div>
+      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 py-4">
+        <h3>Thông tin</h3>
+        <ul class="foterlist">
+          <li><a href="About.html">Về chúng tôi</a></li>
+          <li><a href="shop.html">Đặt mua</a></li>
+          <li><a href="Promotions.html">Khuyến mãi</a></li>
+          <li><a href="contact.html">Liên hệ</a></li>
+        </ul>
+      </div>
+      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 py-4">
+       
+
+
+        <h3>Sản phẩm</h3>
+        <ul class="foterlist">
+          <li><a href="shop.html">Đồng hồ nam</a></li>
+          <li><a href="shop.html">Đồng hồ nữ </a></li>
+          <li><a href="shop.html">Vỏng cổ</a></li>
+          <li><a href="shop.html">Phụ kiện</a></li>
+         
+        </ul>
+      </div>
+      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 py-4">
+
+
+        <h3>Chăm sóc khách hàng</h3>
+        <ul class="foterlist">
+          <li><a href="policy.html">Liên hệ bảo hành</a></li>
+          <li><a href="policy.html">Chính sách</a></li>
+          <li><a href="policy.html">Điểu khoản bảo mật</a></li>
+         
+   
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="row mb-4 d-flex justify-content-between">
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 hertico">
+        <p><small>Copyright ©2023 All rights reserved | Hiếu Lê và Đức Anh cùng những người bạn </small></p>
+      </div>
+      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 justify-content-center ">
+       <div class="sicons pt-1 ">
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-behance"></i></a>
+        <a href="#"><i class="fa-solid fa-globe"></i></a>
+   
+       </div>
+      </div> 
+    </div>
+  </div>
+</div>
+</footer>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://fonts.googleapis.com/css?family=Josefin Sans' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        .product-list {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            margin: auto;
+            margin-top: 5cm;
+            gap: 1cm;
+            margin-left: 2.5cm;
+        }
+        #cartPopup {
+            display: none;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            z-index: 9;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 20px;
+            width: 400px;
+            height: 300px;
+            text-align: center;
+            position: relative;
+        }
+
+        .popup-content p {
+            margin-top: 50px;
+            font-size: 18px;
+        }
+
+        .popup-content .btn-group {
+            margin-top: 30px;
+        }
+
+        .popup-content .btn-group button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .popup-content .btn-group .btn-yes {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .popup-content .btn-group .btn-no {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .close {
+            color: #aaa;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* For product scrolling */
+        .product {
+            max-height: 70vh;
+            overflow-y: scroll;
+        }
+
+        .selected {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand" href="index.html"><img src="imges/logo.png.webp" alt="Logo"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="shop.html">Shop</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="About.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="latest.html"><span class="hot">Hot</span> Latest</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="blog.html">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Page.html">Pages</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="Complaint.html">Complaint</a>
+              </li>
+            </ul>
+            <div class="ricons">
+              <a href="login.html"><i class="fa-regular fa-user"></i></a>
+              <a href="Cart.html"><i class="fab fa-opencart"></i></a> 
+            </div>
+          </div>
+        </div>
+      </nav>
+    
+    <div id="latest-products" class="product-list">
+        
+    </div>
+
+        <div id="cartPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <p>Bạn có chắc muốn thêm sản phẩm này vào giỏ không?</p>
+            <div class="btn-group">
+                <button class="btn-yes" onclick="confirmAddToCart()">Có</button>
+                <button class="btn-no" onclick="closePopup()">Không</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer" style="padding-top: 50px;">
+     
+        <div class="container " style="width: 80%;">
+          <div class="row mb-5">
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 py-4">
+              <a href="#" class="footer-site-logo">
+                <img src="imges/logo.png.webp" alt="">
+              </a>
+              <p class="mt-5">Thương hiệu đồng hồ Việt cho người Việt </p>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 py-4">
+              <h3>Thông tin</h3>
+              <ul class="foterlist">
+                <li><a href="About.html">Về chúng tôi</a></li>
+                <li><a href="shop.html">Đặt mua</a></li>
+                <li><a href="Promotions.html">Khuyến mãi</a></li>
+                <li><a href="contact.html">Liên hệ</a></li>
+              </ul>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 py-4">
+             
+      
+      
+              <h3>Sản phẩm</h3>
+              <ul class="foterlist">
+                <li><a href="shop.html">Đồng hồ nam</a></li>
+                <li><a href="shop.html">Đồng hồ nữ </a></li>
+                <li><a href="shop.html">Vỏng cổ</a></li>
+                <li><a href="shop.html">Phụ kiện</a></li>
+               
+              </ul>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 py-4">
+      
+      
+              <h3>Chăm sóc khách hàng</h3>
+              <ul class="foterlist">
+                <li><a href="policy.html">Liên hệ bảo hành</a></li>
+                <li><a href="policy.html">Chính sách</a></li>
+                <li><a href="policy.html">Điểu khoản bảo mật</a></li>
+               
+         
+              </ul>
+            </div>
+          </div>
+          <div class="row mb-4 d-flex justify-content-between">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 hertico">
+              <p><small>Copyright ©2023 All rights reserved | Hiếu Lê và Đức Anh cùng những người bạn </small></p>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 justify-content-center ">
+             <div class="sicons pt-1 ">
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#"><i class="fa-brands fa-behance"></i></a>
+              <a href="#"><i class="fa-solid fa-globe"></i></a>
+         
+             </div>
+            </div> 
+          </div>
+        </div>
+      </div>
+      </footer>
+    <script>
+        function getLatestProducts() {
+            filteredProducts.sort((a, b) => {
+                var numberA = parseInt(a.alt.replace('Watch ', ''));
+                var numberB = parseInt(b.alt.replace('Watch ', ''));
+                return numberB - numberA;
+            });
+
+            // lấy 3 sản phẩm mới nhất
+            const latestProducts = filteredProducts.slice(0, 3);
+
+
+            document.getElementById('latest-products').innerHTML = generateAllProductHTML(latestProducts);
+        }
+
+        window.onload = getLatestProducts;
+</script>
+    
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/product.js"></script>
+</body>
+
+</html>
